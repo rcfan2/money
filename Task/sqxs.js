@@ -3,7 +3,7 @@ const $=Env(jsname)
 
 
 let count=0;
-let token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6InNkZmRzZmRmZHNmZCJ9.eyJpc3MiOiJhcGltdWwxIiwiYXVkIjoiYXBpbXVsMiIsImp0aSI6InNkZmRzZmRmZHNmZCIsImlhdCI6MTYxMTI5NTI3OSwibmJmIjoxNjExMjk1Mjc5LCJleHAiOjE2MTMwMjMyNzksInVpZCI6MTY3M30.fdpmbXYkU_iNmplrFJLXg17_o4ZMqGjCG4IdHfHQCB0"
+let token=""
 let phoneNum;
 let Code;
 let mid;
@@ -47,15 +47,15 @@ function readbook(i) {
   const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/readpage/pendant/lottery";
   const body = "_public=skinId%3D999%26idfa%3D00000000-0000-0000-0000-000000000000%26ustatus%3D1%26first_placeid%3D111111%26net_env%3Dwifi%26umidtoken%3DXblVsgqHUiwDAN7BcQnm2A/p%26user_id%3D1581813721%26sn%3D9FFC2945934B0127160C769D23FE8D9606CB0FAE%26placeid%3D111111%26msv%3D8.0.0%26brand%3DApple%26imei%3D6C18AFFD2562CD50D015EC289ED2FCAFD6142AF5%26skinVersionPrefix%3D1%26appVer%3D4.3.1.0%26skinActiveColor%3D0F9970%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNTgxODEzNzIxIiwidXRkaWQiOiIiLCJpbWVpIjoiNkMxOEFGRkQyNTYyQ0Q1MEQwMTVFQzI4OUVEMkZDQUZENjE0MkFGNSIsInNuIjoiOUZGQzI5NDU5MzRCMDEyNzE2MEM3NjlEMjNGRThEOTYwNkNCMEZBRSIsImV4cCI6MTYxMTk3OTczMSwidXNlcklkIjoiMTU4MTgxMzcyMSIsImlhdCI6MTYxMTQ2MTMzMSwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.xXOoavJf5RLGfAWRW81ntAFYPLXK7iTy8A_2BOZs-Te-P7YExgai1rAbJo0_Xk_WQVW3nM1O7ztQGBjWaMjvlg%26skinColor%3D23B383%26platform%3DiOS%26ver%3D210111%26mod%3DiPhoneXS%26statusBarHeight%3D44.000000%26skinVersion%3D1%26wh%3D1125x2436%26soft_id%3D21%26utdid%3DXblVsgqHUiwDAN7BcQnm2A/p%26utype%3Dvip%26sdk%3D14.3&deliveryId=707&key=sq_app_ad&miniWua=HHnB_BNsCjFTkqj6%2B7RHyZd0aRLgeHkU4UV2pXextU8aRqmBruB2/pWZbDDJbe0dkT8xg5orbTXnKz2iytGZ9SGab8GOdY/jR3HEaa0vjnSu4aEUPnH29sADapC6mDWmZvGM7&reqEncryptParam=%3A&reqEncryptType=-1&requestSrc=shuqi&resEncryptType=-1&resourceId=678&sign=E0E8C4C87F2243AF5F17BAC3BF9B9876&timestamp=1611461764&userId=1581813721&wua=HIVW_s2mVadRqXN3UyOl0M5aLl/NhqRYxKO6V44KCvlNn0hrRXZeS5WIrHa/9F%2BOa247S8mUULn/y/ghMTdhKp53QMY6M3f0vPd0bRZ4Yk7cCL5utYSE1cXsanTEf6a1Y%2BXSmrmsi2bXlssNtsJZ2mrWKB7kOQySYG88yNcFra8RtLnokJ%2BoiZlyJ1VP/yr7LAfQ3j90XfolABYT4CoecYcnR4R3s%2BDh5jgJRvXLrYFn%2BoaW/%2BulXz7Sj29I5FYnMNbUAQpDLhalgWzW0VzsPrQ/bS1PUrs38ljtztnv/ZivuyS5XdkArQmIxuaya2sxlgkcJ4JwpxjSD5XTWSMr/8PF2Pg%3D%3D";
   const headers = {
-    "Cookie": "isg=BHZ2nolwCs3IL_4p_gRfCfvhzah4l7rRpjsvXeBfY9n0IxS9SCZL4-aQP3lPkLLp; cna=y9yTGMQbbU8CAXFaguAKuky8",
+    "Cookie": "isg=BNPTBu-zt8nqansdmWC0aBimaFP9iGdKjcrlgoXwL_IpBPOmDVj3mjFGOPJqv79C; cna=P9q6GCea7D4CATrz+spiGF+z",
     "Accept": "*/*",
     "Connection": "keep-alive",
-    "Content-Type": "application/x-www-form-urlencoded",
+    "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
     "Accept-Encoding": "gzip, deflate, br",
     "Host": "ocean.shuqireader.com",
-    "User-Agent": "shuqireader/4.3.1 (iPhone; iOS 14.3; Scale/3.00)",
-    "Content-Length": "1748",
-    "Accept-Language": "zh-Hans-CN;q=1, zh-Hant-HK;q=0.9, hi-CN;q=0.8, en-CN;q=0.7"
+    "User-Agent": "%E4%B9%A6%E6%97%97%E5%B0%8F%E8%AF%B4/4.3.4.0 CFNetwork/1126 Darwin/19.5.0",
+    "Content-Length": "336",
+    "Accept-Language": "zh-Hans-CN, en-us"
 };
   const request = {
       url: url,
