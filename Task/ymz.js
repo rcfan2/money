@@ -58,10 +58,10 @@ hostname = ymz.iphonezhuan.com
 
 */
 const $ = new Env('羊毛赚');
-let ymzurl = ["http://ymz.iphonezhuan.com/addaction","http://ymz.iphonezhuan.com/addaction"]
-let ymzhd = [{"Accept":"*/*","Accept-Encoding":"gzip, deflate","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Host":"ymz.iphonezhuan.com","User-Agent":"%E7%BE%8A%E6%AF%9B%E8%8B%B1%E6%B1%89%E8%AF%8D%E5%85%B8/1.03 CFNetwork/1209 Darwin/20.2.0","Content-Length":"82","Accept-Language":"zh-cn"},{"Accept":"*/*","Accept-Encoding":"gzip, deflate","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Host":"ymz.iphonezhuan.com","User-Agent":"%E7%BE%8A%E6%AF%9B%E8%8B%B1%E6%B1%89%E8%AF%8D%E5%85%B8/1.03 CFNetwork/1209 Darwin/20.2.0","Content-Length":"82","Accept-Language":"zh-cn"}]
-let ymzbody = ["sign=69ad3306fb9c63c26f85a84c06efc310&channelID=2&taskid=1&type=1&uid=9471&ver=102","sign=2b03f9740439fc2397f7264c39a7e8a7&channelID=2&taskid=1&type=1&uid=9473&ver=102"]
-let ymzbody1 = ["sign=52aa1cca7d4590ba248e83e09a1ba65a&channelID=2&taskid=2&type=2&uid=9471&ver=102","sign=2254dece025d8894a5a004deb74bc145&channelID=2&taskid=2&type=2&uid=9473&ver=102"]
+let ymzurl = ["http://ymz.iphonezhuan.com/addaction"]
+let ymzhd = [{"Accept":"*/*","Accept-Encoding":"gzip, deflate","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Host":"ymz.iphonezhuan.com","User-Agent":"%E7%BE%8A%E6%AF%9B%E8%8B%B1%E6%B1%89%E8%AF%8D%E5%85%B8/1.03 CFNetwork/1126 Darwin/19.5.0","Content-Length":"82","Accept-Language":"zh-cn"}]
+let ymzbody = ["sign=d4c44b63095d5ee3ac4d51c474a70f4d&channelID=2&taskid=1&type=1&uid=8667&ver=102"]
+let ymzbody1 = ["sign=296f070fb904d92fdb9803826351fcf0&channelID=2&taskid=2&type=2&uid=8667&ver=102"]
 console.log(`羊毛赚共${ymzurl.length}个账号\n`)
 !(async () => {
 	
