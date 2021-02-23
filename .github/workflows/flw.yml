@@ -20,6 +20,7 @@ jobs:
         FL_flwqwBODY: ${{ secrets.FL_flwqwBODY }}
         FL_flwydBODY: ${{ secrets.FL_flwydBODY }} 
         FL_flwydBODY2: ${{ secrets.FL_flwydBODY2 }}
+        FL_flwydBODY3: ${{ secrets.FL_flwydBODY3 }}
         FL_CASH: ${{ secrets.FL_CASH }}//天天领现金提现
         FL_DHCASH: ${{ secrets.FL_DHCASH }}//签到活动兑换
     steps:
