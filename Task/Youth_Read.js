@@ -1,8 +1,8 @@
 /*
-更新时间: 2021-02-25 20:51
+更新时间: 2021-02-27 21:30
 Github Actions使用方法见[@lxk0301](https://raw.githubusercontent.com/lxk0301/scripts/master/githubAction.md) 使用方法大同小异
 
-请自行抓包，阅读文章和看视频，倒计时转一圈显示青豆到账即可，多看几篇文章和视频，获得更多包数据，抓包地址为"https://ios.baertt.com/v5/article/complete.json"，在Github Actions中的Secrets新建name为'YOUTH_READ'的一个值，拷贝抓包的请求体到下面Value的文本框中，添加的请求体越多，获得青豆次数越多，本脚本不包含任何推送通知
+点击几篇文章和视频，自动获取阅读请求，在Github Actions中的Secrets新建name为'YOUTH_READ'的一个值，拷贝抓包的请求体到下面Value的文本框中，添加的请求体越多，获得青豆次数越多，本脚本不包含任何推送通知
 
 多个请求体时用'&'号或者换行隔开" ‼️
 
@@ -12,7 +12,8 @@ const $ = new Env("中青看点阅读")
 //const notify = $.isNode() ? require('./sendNotify') : '';
 let ReadArr = [], timebodyVal ="";
 let YouthBody = $.getdata('youth_autoread')||$.getdata("zqgetbody_body");
-let smallzq = $.getdata('youth_cut')
+let smallzq = $.getdata('youth_cut');
+let indexLast = $.getdata('zqbody_index');
 let artsnum = 0, videosnum = 0;
 let videoscore = 0,readscore = 0;
 let artArr = [], delbody = 0;
@@ -24,7 +25,7 @@ let lastIndex = $.getdata('zqbody_index')
 if (!$.isNode() && !YouthBody == true) {
     $.log("您未获取阅读请求，请求阅读后获取")
     $.msg($.name, "您未获取阅读请求，请求阅读后获取", "", {
-        'open-url': "https://kandian.youth.cn/u/8S9DO"
+        'open-url': "https://kandian.youth.cn/u/UnEWm"
     })
     return
 } else if (!$.isNode() && YouthBody.indexOf("&") == -1) {
@@ -32,20 +33,20 @@ if (!$.isNode() && !YouthBody == true) {
 } else {
     if ($.isNode()) {
         if (process.env.YOUTH_READ && process.env.YOUTH_READ.indexOf('&') > -1) {
-            YouthBody = process.env.YOUTH_READ.split('&');
+            YouthBodys = process.env.YOUTH_READ.split('&');
             console.log(`您选择的是用"&"隔开\n`)
         } else if (process.env.YOUTH_READ && process.env.YOUTH_READ.indexOf('\n') > -1) {
-            YouthBody = process.env.YOUTH_READ.split('\n');
+            YouthBodys = process.env.YOUTH_READ.split('\n');
             console.log(`您选择的是用换行隔开\n`)
         } else {
-            YouthBody = [process.env.YOUTH_READ]
+            YouthBodys = [process.env.YOUTH_READ]
         }
     } else if (!$.isNode() && YouthBody.indexOf("&") > -1) {
-        YouthBody = YouthBody.split("&")
+        YouthBodys = YouthBody.split("&")
     };
-    Object.keys(YouthBody).forEach((item) => {
-        if (YouthBody[item]) {
-            ReadArr.push(YouthBody[item])
+    Object.keys(YouthBodys).forEach((item) => {
+        if (YouthBodys[item]) {
+            ReadArr.push(YouthBodys[item])
         }
     })
 }
@@ -63,18 +64,23 @@ $.log("******** 您共获取" + ReadArr.length + "次阅读请求，任务开始
         console.log($.name, '【提示】请把抓包的请求体填入Github 的 Secrets 中，请以&隔开')
         return;
     }
-    let indexLast = $.getdata('zqbody_index');
-    $.begin = indexLast ? parseInt(indexLast, 10) : 1;
-    $.index = 0;
-    if ($.begin + 1 <= ReadArr.length) {
-        $.log("\n上次运行到第" + $.begin + "次终止，本次从" + (parseInt($.begin) + 1) + "次开始");
-    } else {
-        $.log("由于上次缩减剩余请求数已小于总请求数，本次从头开始")
-        indexLast = 0, $.begin = 0
-    }
+if (!$.isNode()) {
+  $.begin = indexLast ? parseInt(indexLast) : 1;
+  if ($.begin + 1 <= ReadArr.length) {
+    $.log("\n上次运行到第" + $.begin + "次终止，本次从" + (parseInt($.begin) + 1) + "次开始");
+  } else {
+    $.log("由于上次缩减剩余请求数已小于总请求数，本次从头开始");
+    indexLast = 0,
+    $.begin = 0
+  }
+} else {
+  indexLast = 0,
+  $.begin = 0
+}
     if (smallzq == "true") {
         $.log("     请注意缩减请求开关已打开‼️\n     如不需要    请强制停止\n     关闭Boxjs缩减请求开关")
     };
+    $.index = 0;
     for (var i = indexLast ? indexLast : 0; i < ReadArr.length; i++) {
         if (ReadArr[i]) {
             articlebody = ReadArr[i];
@@ -86,7 +92,8 @@ $.log("******** 您共获取" + ReadArr.length + "次阅读请求，任务开始
     $.log("\n……………………………………………………………………\n\n本次共删除" + delbody + "个请求，剩余" + (ReadArr.length - delbody) + "个请求");
     $.log("本次共阅读" + artsnum + "次资讯，共获得" + readscore + "青豆\n观看" + videosnum + "次视频，获得" + videoscore + "青豆(不含0青豆次数)\n");
     console.log(`-------------------------\n\n中青看点共完成${$.index}次阅读，共计获得${readscore+videoscore}个青豆，阅读请求全部结束`);
-    $.msg($.name, `本次运行共完成${$.index}次阅读，共计获得${readscore+videoscore}个青豆`)
+$.log(readtimes?"阅读时长"+parseInt(readtimes)+"分钟":"")
+    $.msg($.name, `本次运行共完成${$.index}次阅读，共计获得${readscore+videoscore}个青豆`,"删除"+delbody+"个请求"+(readtimes?"，阅读时长"+parseInt(readtimes)+"分钟":""))
 })()
     .catch((e) => $.logErr(e))
     .finally(() => $.done())
@@ -95,20 +102,26 @@ function bodyInfo() {
     return new Promise((resolve, reject) => {
         $.get(batHost('article/info/get.json?' + articlebody), async(error, resp, data) => {
             let bodyobj = JSON.parse(data);
+            //$.log(JSON.stringify(bodyobj,null,2))
+                $.begin = $.begin + 1;
+                let res = $.begin % ReadArr.length;
+                $.setdata(res + "", 'zqbody_index');
             try {
-                if (bodyobj.error_code == 0) {
+                if (bodyobj.error_code == "200007"&&!$.isNode()) {
+                await removebody();
+                $.log(bodyobj.message+"已自动删除");
+                } else if (bodyobj.error_code == 0) {
                     acticid = bodyobj.url.match(/\d+/)[0];
                     artdesc = bodyobj.description
                     author = bodyobj.account.name
                     ctype = bodyobj.ctype == 0 ? "阅读资讯" : "观看视频";
                     if (artArr.indexOf(acticid) == -1) {
-                        artArr.unshift(acticid);
+                artArr.unshift(acticid);
                         $.log(ctype + ": " + artdesc + "  ----- " + author + "\n")
                         await $.wait(10000);
                         await AutoRead();
-                    } else if (artArr.indexOf(acticid) > -1) {
-                        repeatbody = $.getdata('youth_autoread').replace("&" + articlebody, "");
-                        $.setdata(repeatbody, 'youth_autoread')
+                    } else if (artArr.indexOf(acticid) > -1&&!$.isNode()) {
+                        await removebody();
                         $.log("文章ID:" + acticid + " 请求重复，已自动删除")
                         delbody += 1;
                         await $.wait(1000)
@@ -132,9 +145,6 @@ function AutoRead() {
             if (readres.items.complete == 1) {
                 $.log(readres.items.max_notice)
             } else {
-                $.begin = $.begin + 1;
-                let res = $.begin % ReadArr.length;
-                $.setdata(res + "", 'zqbody_index');
                 if (readres.error_code == '0' && data.indexOf("read_score") > -1 && readres.items.read_score > 0) {
                     console.log(`本次阅读获得${readres.items.read_score}个青豆，请等待30s后执行下一次阅读\n`);
                     if (data.indexOf("ctype") > -1) {
@@ -161,17 +171,15 @@ function AutoRead() {
                     }
                 } else if (readres.error_code == '0' && data.indexOf('"score":0') > -1 && readres.items.score == 0) {
                     $.log(`\n本次阅读获得0个青豆，等待10s即将开始下次阅读\n`);
-                    if (smallzq == "true" && articlebody !== ReadArr[0]) {
-                        smreadbody = $.getdata('youth_autoread').replace("&" + articlebody, "")
-                        $.setdata(smreadbody, 'youth_autoread')
+                    if (smallzq == "true") {
+                        await removebody();
                         $.log("已删除第" + ($.begin) + "个请求，如无需删除请及时提前关掉boxjs内的开关，使用后即关闭")
                         delbody += 1
                     }
                 } else if (readres.success == false) {
                     console.log(`第${$.index}次阅读请求有误，请删除此请求`);
-                    if (smallzq == "true" && articlebody !== ReadArr[0]) {
-                        smreadbody = $.getdata('youth_autoread').replace("&" + articlebody, "");
-                        $.setdata(smreadbody, 'youth_autoread');
+                    if (smallzq == "true") {
+                        await removebody();
                         $.log("已删除第" + ($.begin) + "个请求，如无需删除请及时提前关掉boxjs内的开关，使用后即关闭");
                         delbody += 1
                     }
@@ -182,11 +190,20 @@ function AutoRead() {
     })
 }
 
+function removebody() {
+  if (articlebody !== ReadArr[0]) {
+      smallbody = $.getdata('youth_autoread').replace("&" + articlebody, "");
+  } else {
+      smallbody = $.getdata('youth_autoread').replace(articlebody + "&", "")
+  }
+  $.setdata(smallbody, 'youth_autoread')
+}
+
 function batHost(api, body) {
     return {
         url: 'https://ios.baertt.com/v5/' + api,
         headers: {
-            'User-Agent': 'KDApp/2.0.0 (iPhone; iOS 14.5; Scale/3.00)',
+            'User-Agent': 'KDApp/2.0.2 (iPhone; iOS 14.5; Scale/3.00)',
             'Host': 'ios.baertt.com',
             'Content-Type': 'application/x-www-form-urlencoded'
         },
