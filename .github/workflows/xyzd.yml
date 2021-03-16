@@ -4,7 +4,7 @@ name: xyzd
 on:
   workflow_dispatch:
   schedule:
-     - cron: '*/20 1-11 * * *'
+     - cron: '*/15 1-11 * * *'
   watch:
     types: started
 jobs:
