@@ -4,7 +4,7 @@ name: hldsp
 on:
   workflow_dispatch:
   schedule:
-     - cron: '*/23 1-13 * * *'
+     - cron: '*/20 1-13 * * *'
   watch:
     types: started
 jobs:
