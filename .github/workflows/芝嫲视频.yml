@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/a1564471347/ZQ.git ~/ZQ
+          git clone https://github.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/tree/main.git ~/gitee_q8qsTAUA_cThxc1RBVUE/tree/main
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -32,12 +32,12 @@ jobs:
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
       - name: npm install
         run: |
-          cd ~/ZQ
+          cd ~/gitee_q8qsTAUA_cThxc1RBVUE/tree/main
           git checkout main
           npm install
       - name: '运行 【芝嫲视频】'
         run: |
-          cd ~ZQ
+          cd ~gitee_q8qsTAUA_cThxc1RBVUE/tree/main
           node Task/zhima.js
         env:
           TZ: Asia/shanghai
