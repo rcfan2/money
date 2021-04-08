@@ -32,7 +32,7 @@ jobs:
         if: env.VSH_HD
         run: |
           cd ~/ZQ
-        git checkout a1564471347
+        git checkout JavaScript
         npm install
       - name: '运行 【V生活任务】'
         if: env.VSH_HD
