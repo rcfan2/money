@@ -2,7 +2,7 @@
 自行替换XXX地方的名字（就是你github库的名字）
 */
 
-name: V生活任务
+name: V生活
 
 on:
   workflow_dispatch:
@@ -27,7 +27,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/xxx
+          git clone https://github.com/a1564471347/ZQ
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
@@ -35,13 +35,13 @@ jobs:
       - name: npm install
         if: env.VSH_HD
         run: |
-          cd ~/XXX
+          cd ~/ZQ
           git checkout JavaScript
           npm install
       - name: '运行 【V生活任务】'
         if: env.VSH_HD
         run: |
-          cd ~/XXX
+          cd ~/ZQ
           node Task/vsh.js
         env:
           
