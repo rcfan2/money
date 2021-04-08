@@ -1,8 +1,4 @@
-/*
-自行替换XXX地方的名字（就是你github库的名字）
-*/
-
-name: V生活
+name: Vsh
 
 on:
   workflow_dispatch:
