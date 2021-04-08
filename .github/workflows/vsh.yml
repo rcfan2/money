@@ -1,4 +1,4 @@
-name: Vsh
+name: vsh
 
 on:
   workflow_dispatch:
@@ -23,7 +23,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/a1564471347/ZQ
+          git clone https://github.com/a1564471347
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
@@ -31,13 +31,13 @@ jobs:
       - name: npm install
         if: env.VSH_HD
         run: |
-          cd ~/ZQ
+          cd ~/a1564471347
           git checkout JavaScript
           npm install
       - name: '运行 【V生活任务】'
         if: env.VSH_HD
         run: |
-          cd ~/ZQ
+          cd ~/a1564471347
           node Task/vsh.js
         env:
           
