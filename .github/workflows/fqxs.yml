@@ -6,7 +6,7 @@ name: fqxs
 on:
   workflow_dispatch:
   schedule:
-     - cron: '0/30 0-23 * * *'
+     - cron: '0/30 1-9 * * *'
   watch:
     types: started
 jobs:
