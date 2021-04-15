@@ -33,7 +33,7 @@ jobs:
       - name: '运行 【番茄看看】'
         if: env.fqkkurl
         run: |
-          cd ~/Scripts
+          cd ~/ZQ
           node Task/11fqkk.js
         env:
           fqkkurl: ${{ secrets.fqkkurl }}
