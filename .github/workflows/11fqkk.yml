@@ -19,14 +19,14 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/adw2s/Action.git ~/Scripts
+          git clone https://github.com/a1564471347/ZQ.git ~/ZQ
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
       - name: npm install
         run: |
-          cd ~/Scripts
+          cd ~/ZQ
           npm install -g npm
           npm update
 
