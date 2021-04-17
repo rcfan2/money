@@ -3,7 +3,7 @@ name: ximei
 on:
   workflow_dispatch:
   schedule:
-     - cron: '20 1-8 * * *'
+     - cron: '20 1-10 * * *'
   watch:
     types: ximei
 jobs:
