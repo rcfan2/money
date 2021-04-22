@@ -3,7 +3,7 @@
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '*/40 * * * *'
   watch:
     types: started
   repository_dispatch:
@@ -31,7 +31,7 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【风云变幻】'
+      - name: '运行 【sq】'
         run: |
           node Task/shuqi.js
         env:
