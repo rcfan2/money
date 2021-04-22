@@ -1,9 +1,9 @@
-﻿name: 风云变幻
+﻿name: sq
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/40 * * * *'
+    - cron: '*/30 * * * *'
   watch:
     types: started
   repository_dispatch:
@@ -33,7 +33,7 @@ jobs:
           npm install
       - name: '运行 【风云变幻】'
         run: |
-          node Task/jdtq.js
+          node Task/shuqi.js
         env:
           #RLURL: ${{ secrets.RLURL }}
           #RLHEADER: ${{ secrets.RLHEADER }}
