@@ -4,7 +4,7 @@ name: 番茄小说
 on:
   workflow_dispatch:
   schedule:
-     - cron: '0 2,3,4 * * *'
+     - cron: '0 */1 * * *'
   watch:
     types: started
 jobs:
@@ -27,7 +27,7 @@ jobs:
           npm install
       - name: '运行 【番茄小说】'
         run: |
-          node Scripts/fqxs.js
+          node Task/fqxs.js
         env:
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
