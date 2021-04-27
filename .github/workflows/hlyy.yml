@@ -1,0 +1,30 @@
+# This is a basic workflow to help you get started with Actions
+
+name: 葫芦音乐
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0/30 0-23 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - name: Checkout
+        run: |
+          git clone https://github.com/niubi-66/B.git ~/js
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: npm install
+        run: |
+          cd ~/js
+          npm install
+          npm install cron
+          npm install request
+      - name: '运行 【葫芦音乐】'
+        run: |
+          cd ~/js   
+          node Task/hlyy.js
