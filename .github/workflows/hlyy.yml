@@ -5,7 +5,7 @@ name: 葫芦音乐
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0/20 0-23 * * *'
+    - cron: '0/30 0-23 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,18 +13,18 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/a1564471347/ZQ.git ~/ZQ
+          git clone https://github.com/niubi-66/B.git ~/js
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
       - name: npm install
         run: |
-          cd ~/ZQ
+          cd ~/js
           npm install
           npm install cron
           npm install request
       - name: '运行 【葫芦音乐】'
         run: |
-          cd ~/ZQ  
+          cd ~/js   
           node Task/hlyy.js
