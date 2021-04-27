@@ -30,7 +30,7 @@ jobs:
       - name: '运行 【朗果英语】'
         if: env.LGYY_HD
         run: |
-          node Scripts/lgyy.js
+          node Task/lgyy.js
         env:
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
