@@ -22,9 +22,9 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【食材大冲关】'
+      - name: '运行 【ryhy】'
         run: |
-          node Scripts/scdcg.js
+          node Task/ryhy.js
         env:
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
