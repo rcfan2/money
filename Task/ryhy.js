@@ -14,7 +14,7 @@ var roomcount,unlockno,id
 let shouldplan0,shouldplant1,shouldplant2,shouldplan3,ahouldplant4
 let status;
 status = (status = ($.getval("ryhystatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
-var ryhyheaderArr = []
+var ryhyheaderArr = ['{\"bs\":\" CDMA\",\"osVersion\":\" iOS 13.50\",\"Host\":\"bp-api.coohua.com\",\"pkgId\":\" 271\",\"Accept-Encoding\":\"gzip, deflate, br\",\"deviceId\":\" 0\",\"wechatId\":\" \",\"brand\":\" Apple\",\"channel\":\" AppStore\",\"Cache-Control\":\"no-cache\",\"appVersion\":\" 1.0.3\",\"accessKey\":\" 111e4128a74700976553a0b03188137a_212430736\",\"romVersion\":\" iOS 13.50\",\"Connection\":\"keep-alive\",\"User-Agent\":\"ryhy-mobile/1 CFNetwork/1126 Darwin/19.5.0\",\"os\":\" iOS\",\"Accept-Language\":\"zh-cn\",\"Content-Type\":\" application/json\",\"oaid\":\" \",\"Accept\":\"*/*\",\"blackBox\":\" \",\"Content-Length\":\"37\",\"gps\":\" default\"}']
 var ryhyadheaderArr = []
 var ryhyadbodyArr = []
 let ryhyheader = $.getdata('ryhyheader')
