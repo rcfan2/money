@@ -1,10 +1,10 @@
-name: 食材大冲关
+name: ryhy
 
 
 on:
   workflow_dispatch:
   schedule:
-     - cron: '0 4 * * *'
+     - cron: '*/15 * * * *'
   watch:
     types: started
 jobs:
