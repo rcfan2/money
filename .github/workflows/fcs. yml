@@ -1,19 +1,15 @@
 name: 发财树
 
-
 on:
   workflow_dispatch:
   schedule:
-     - cron: '0 */5 * * *'
+     - cron: '1 */5 * * *'
   watch:
     types: started
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.event.repository.owner.id == github.event.sender.id
-    env:
-        FQXSURL: ${{ secrets.FQXSURL }}
-        FQXS: ${{ secrets.FQXS }}    
+    if: github.event.repository.owner.id == github.event.sender.id   
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -35,4 +31,4 @@ jobs:
           TG_USER_ID: ${{ secrets.TG_USER_ID }}
           BARK_SOUND: ${{ secrets.BARK_SOUND }}
           DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
-          DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}          
+          DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }} 
