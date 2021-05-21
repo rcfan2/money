@@ -3,7 +3,7 @@ name: 发财树
 on:
   workflow_dispatch:
   schedule:
-     - cron: '1 */5 * * *'
+     - cron: '1 */2 * * *'
   watch:
     types: started
 jobs:
