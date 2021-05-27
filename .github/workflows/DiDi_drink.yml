@@ -3,7 +3,7 @@ name: 滴滴出行
 on:
   workflow_dispatch:
   schedule:
-    - cron: '46 0,10 * * *'
+    - cron: '40 0,12,1-11/2 * * *'
   watch:
     types: [started]
 
