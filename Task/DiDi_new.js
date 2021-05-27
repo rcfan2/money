@@ -107,8 +107,8 @@ if ($.isRequest) {
 	$.done({});
 } else {
 	!(async () => {
-		$.Ticket = $.getdata('DiDi');
-		$.city = $.getdata('DiDi_city');
+		$.Ticket = "BkdfsNFf9h0y-nqRsgGr6nLJmk-sdpH__ZUTCBoWoRwkzDmOAkEMQNG7_Nhq2bW5yunkc4cZaJakkEBELe6OGvKntzGVIC-6KMI0woSZCFNVFWYmzOtIrfVcLacszEJYS95qSZ6EWQl-fhH-CBD-idSteNU-zC2XIRyJJqzExuP2vB9WQl_Caa9sdO-f6kxgVYt7s-oZ4fItrzt_BwAA__8=";
+		$.city = 63;
 		$.now = new Date().getTime();
 		if (!$.Ticket || !$.city) {
 			throw new ERR.TokenError("❌ 未获取或填写 Token");
