@@ -22,6 +22,9 @@ jobs:
       - name: npm install
         run: |
           npm install
+          npm install cron
+          npm install request
+          npm install md5-node
       - name: '运行 【中青分享】'
         run: |
           node Task/youthshare.js
