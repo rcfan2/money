@@ -75,11 +75,7 @@
       "keys": [
         "ttwksignheader",
         "ttwksignbody",
-        "ttwksignurl",
-        "createSignurlname",
-        "createSignhdname",
-        "createSignbdname",
-        "miningurlname"
+        "ttwksignurl"
       ],
       "author": "@wangfei021325, @chavyleung",
       "repo": "https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/ttwk/ttwk.js",
