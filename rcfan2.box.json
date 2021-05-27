@@ -1,0 +1,131 @@
+{
+  "id": "xl2101200.app.sub",
+  "name": "rcfan1 脚本订阅",
+  "author": "@rcfan1",
+  "icon": "https://raw.githubusercontent.com/xl2101200/-/main/tom/tom.png",
+  "repo": "https://github.com/rcfan1/money",
+  "apps": [{
+            "id": "fcs",
+            "name": "fcs",
+            "keys": ["fcsurl","fcshd","fcsbody","fcsurl2","fcshd2","fcsbody2"],
+            "author": "@tom",
+            "settings": [{
+            "id": "fcsstatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前抓取ck记录的账号序号，如：1、2、3、4"
+    },{
+            "id": "fcscount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "指定任务最多跑几个账号，根据抓取的账号数据个数来设值"
+    }],
+            "repo": "https://raw.githubusercontent.com/xl2101200/-/main/fcs.js",
+            "icons": ["https://raw.githubusercontent.com/xl2101200/-/main/tom/tom.jpg","https://raw.githubusercontent.com/xl2101200/-/main/tom/tom.jpg"],
+            "script": "https://raw.githubusercontent.com/xl2101200/-/main/fcs.js"
+    },
+    {
+      "id": "qtt",
+      "name": "趣头条",
+      "keys": ["senku_signKey_qtt", "senku_signXTK_qtt", "senku_readKey_qtt", "senku_navCoinKey_qtt"],
+      "author": "@GideonSenku",
+      "repo": "https://github.com/chavyleung/scripts/tree/master/qtt",
+      "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/qtt/qtt.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/qtt.png",
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/qtt.png"
+      ]
+    },
+    {
+      "id": "qmlzc",
+      "name": "全民来找茬",
+      "keys": ["xnmheader", "xnmurl"],
+      "author": "@GideonSenku",
+      "repo": "https://github.com/chavyleung/scripts/tree/master/qtt",
+      "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/qtt/qtt.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/qtt.png",
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/qtt.png"
+      ]
+    },
+    {
+      "id": "chavyleung.10086",
+      "name": "10086",
+      "keys": [
+        "chavy_autologin_cmcc",
+        "chavy_getfee_cmcc",
+        "chavy_tokenurl_10086",
+        "chavy_tokenheader_10086",
+        "chavy_signurl_10086",
+        "chavy_signheader_10086"
+      ],
+      "author": "@wangfei021325, @chavyleung",
+      "repo": "https://github.com/chavyleung/scripts/blob/master/10086/10086.js",
+      "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/10086/10086.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/10086.png",
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/10086.png"
+      ]
+    },
+    {
+      "id": "ttwk",
+      "name": "支付宝天天挖矿",
+      "keys": [
+        "ttwksignheader",
+        "ttwksignbody",
+        "ttwksignurl",
+        "createSignurlname",
+        "createSignhdname",
+        "createSignbdname",
+        "miningurlname"
+      ],
+      "author": "@wangfei021325, @chavyleung",
+      "repo": "https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/ttwk/ttwk.js",
+      "script": "https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/ttwk/ttwk.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/10086.png",
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/10086.png"
+      ]
+    },
+    {
+      "id": "WeChatLottery_new",
+      "name": "微信抽奖",
+      "keys": [
+        "wclotterynew",
+        "wcluid"    
+      ],
+      "author": "@wangfei021325, @chavyleung",
+      "repo": "https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Task/WeChatLottery_new.js",
+      "script": "https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Task/WeChatLottery_new.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/10086.png",
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/10086.png"
+      ]
+    },
+    {
+            "id": "ipxz",
+            "name": "ip小站",
+            "keys": ["ipxzurl", "ipxzhd", "ipxzurl2", "ipxzhd2"],
+            "author": "@tom",
+            "settings": [{
+            "id": "ipxzstatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "ipxzcount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://raw.githubusercontent.com/xl2101200/-/main/ipxz.js",
+            "icons": ["https://raw.githubusercontent.com/xl2101200/-/main/tom/tom.jpg","https://raw.githubusercontent.com/xl2101200/-/main/tom/tom.jpg"],
+            "script": "https://raw.githubusercontent.com/xl2101200/-/main/ipxz.js"
+    }
+]
+}
