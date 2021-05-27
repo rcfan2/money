@@ -107,8 +107,8 @@ if ($.isRequest) {
 	$.done({});
 } else {
 	!(async () => {
-		$.Ticket = $.read("#DiDi");
-		$.city = $.read("#DiDi_city");
+		$.Ticket = $.read("DiDi");
+		$.city = $.read("DiDi_city");
 		$.now = new Date().getTime();
 		if (!$.Ticket || !$.city) {
 			throw new ERR.TokenError("❌ 未获取或填写 Token");
