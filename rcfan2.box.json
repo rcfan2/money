@@ -69,6 +69,21 @@
         "https://raw.githubusercontent.com/Orz-3/mini/master/Color/10086.png"
       ]
     },
+      {
+      "id": "xbzs",
+      "name": "小宝种树",
+      "keys": [
+        "xbzsurl",
+        "xbzshd"    
+      ],
+      "author": "@tom",
+      "repo": "https://raw.githubusercontent.com/xl2101200/-/main/xbzs.js",
+      "script": "https://raw.githubusercontent.com/xl2101200/-/main/xbzs.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/10086.png",
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/10086.png"
+      ]
+    },
     {
       "id": "ttwk",
       "name": "支付宝天天挖矿",
