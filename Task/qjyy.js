@@ -33,19 +33,17 @@ boxjs地址 ： https://raw.githubusercontent.com/xl2101200/-/main/tom.box.json
 const $ = new Env('青椒音乐');
 let DD = RT(5000, 8000)
 let headers = {
-“user-agent": "Mozilla/5.0 (Linux; Android 10; HUAWEI-CDY-AN00 Build/HUAWEICDY-AN00; default/1.0.2;)”,
-”app_version": "1.0.2”,
-”channel": "default”,
-”smid": "DUI_XSfnZaH5LmgvutsI2uttiiFNjuvjDu07”,
-”oaid": "00000000-0000-0000-0000-000000000000”,
-”mac": "d2-f1-af-59-ca-79”,
-”androidid": "46cc0a206ac09cd2”,
-”token": "417e46df-9c81-4004-ad60-5c690de1f191”,
-”content-type": "application/json; charset=utf-8”,
-”content-length": "580”,
-“Host”: “music2-game.iscrv.com”,
-“connection”: “Keep-Alive”,
-”accept-encoding": "gzip”,
+  "user-agent": "Mozilla/5.0 (Linux; Android 10; HUAWEI-CDY-AN00 Build/HUAWEICDY-AN00; default/1.0.2;)",
+  "app_version": "1.0.2",
+  "channel": "default",
+  "smid": "DUI_XSfnZaH5LmgvutsI2uttiiFNjuvjDu07",
+  "oaid": "00000000-0000-0000-0000-000000000000",
+  "mac": "d2-f1-af-59-ca-79",
+  "androidid": "46cc0a206ac09cd2",
+  "token": "417e46df-9c81-4004-ad60-5c690de1f191",
+  "content-type": "application/json; charset=utf-8",
+  "content-length": "580",
+  "accept-encoding": "gzip"
 }
 
 !(async () => {
