@@ -51,6 +51,18 @@
       ]
     },
     {
+      "id": "debao",
+      "name": "得宝",
+      "keys": ["debao_userSignKey", "signKey"],
+      "author": "@GideonSenku",
+      "repo": "https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Script/debao.js",
+      "script": "https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Script/debao.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/qtt.png",
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/qtt.png"
+      ]
+    },
+    {
       "id": "chavyleung.10086",
       "name": "10086",
       "keys": [
